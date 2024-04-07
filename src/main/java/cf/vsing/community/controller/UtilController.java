@@ -59,5 +59,7 @@ public class UtilController {
             log.error("验证码生产失败" + e.getMessage());
         }
     }
+    @RequestMapping("/test")
+    public void Test(){}
 
 }
