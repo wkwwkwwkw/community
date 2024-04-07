@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="https://static.nowcoder.com/images/logo_87_87.png"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/global.css"/>
+    <link rel="stylesheet" href="/css/letter.css"/>
+    <title>牛客网-通知详情</title>
+</head>
+<body>
+<div class="nk-container">
+    <header th:replace="~{commons::head}">头部</header>
+
+    <!-- 内容 -->
+    <div class="main">
+        <div class="container">
+            <div class="row">
+                <div class="col-8">
+                    <h6><b class="square"></b> 系统通知</h6>
+                </div>
+                <div class="col-4 text-right">
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="location.href='/info';">返回</button>
+                </div>
+            </div>
+            <!-- 通知列表 -->
+            <ul class="list-unstyled mt-4">
+                <!-- 评论 -->
+                <li class="media pb-3 pt-3 mb-2" th:if="${event=='comment'&&infos!=null}" th:each="info:${infos}">
+                    <a th:href="@{|sapce/${info.from.id}|}">
+                        <img th:src="@{${info.from.header}}" class="mr-4 rounded-circle user-header" alt="用户头像">
+                    </a>
+                    <div class="toast show d-lg-block" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-header">
+                            <strong class="mr-auto" th:utext="${info.from.username}">用户名</strong>
+                            <small th:utext="${info.small}">提示文字</small>
+                        </div>
+                        <div class="toast-body" th:utext="${info.content}">消息内容</div>
+                        <div class="toast-header">
+                            <a class="mr-auto" th:if="${info.link!=null}" th:href="${info.link}">查看详情</a>
+                            <small th:text="${#dates.format(info.date,'yyyy-MM-dd HH:mm:ss')}">消息发送时间</small>
+                        </div>
+                    </div>
+                </li>
+                <!-- 点赞 -->
+                <li class="media pb-3 pt-3 mb-2" th:if="${event=='like'&&infos!=null}" th:each="info:${infos}">
+                    <a th:href="@{|sapce/${info.from.id}|}">
+                        <img th:src="@{${info.from.header}}" class="mr-4 rounded-circle user-header" alt="用户头像">
+                    </a>
+                    <div class="toast show d-lg-block" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-header">
+                            <strong class="mr-auto" th:utext="${info.from.username}">用户名</strong>
+                            <small th:utext="${info.small}">提示文字</small>
+                        </div>
+                        <div class="toast-body" th:utext="${info.content}">被赞文章标题</div>
+                        <div class="toast-header">
+                            <a class="mr-auto" th:if="${info.link!=null}" th:href="${info.link}">查看详情</a>
+                            <small th:text="${#dates.format(info.date,'yyyy-MM-dd HH:mm:ss')}">消息发送时间</small>
+                        </div>
+                    </div>
+                </li>
+                <!-- 关注 -->
+                <li class="media pb-3 pt-3 mb-2" th:if="${event=='follow'&&infos!=null}" th:each="info:${infos}">
+                    <a th:href="@{|sapce/${info.from.id}|}">
+                        <img th:src="@{${info.from.header}}" class="mr-4 rounded-circle user-header" alt="用户头像">
+                    </a>
+                    <div class="toast show d-lg-block" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-header">
+                            <strong class="mr-auto" th:utext="${info.from.username}">用户名</strong>
+                            <small th:utext="${info.small}">提示文字</small>
+                        </div>
+                        <div class="toast-header">
+                            <small th:text="${#dates.format(info.date,'yyyy-MM-dd HH:mm:ss')}">消息发送时间</small>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <nav th:replace="~{commons::pageBar}">分页</nav>
+        </div>
+    </div>
+    <footer th:replace="~{commons::footer}">页脚</footer>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<script src="/js/global.js"></script>
+<script src="/js/message.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cf.vsing.community.dao.ArticleMapper">
+
+    <select id="selectMaxId" resultType="int">
+        SELECT id FROM article
+        ORDER BY id DESC
+        LIMIT 0,1
+    </select>
+
+    <select id="selectArticleByUserId" resultType="Article">
+        SELECT id, user_id, title, content, type, status, create_time, comment_count, score
+        FROM article
+        WHERE status!=2
+        <if test="userId!=0">
+            AND user_id=#{userId}
+        </if>
+        ORDER BY type DESC ,create_time DESC
+        LIMIT #{offset},#{limit}
+    </select>
+
+    <select id="selectArticleById" resultType="Article">
+        SELECT id, user_id, title, content, type, status, create_time, comment_count, score
+        FROM article
+        WHERE id = #{id}
+    </select>
+
+    <select id="selectArticleRows" resultType="int">
+        SELECT COUNT(id)
+        FROM article
+        WHERE status!=2
+        <if test="userId!=0">
+            AND user_id=#{userId}
+        </if>
+    </select>
+
+    <insert id="insertArticle" parameterType="Article" keyProperty="id">
+        INSERT INTO article (user_id, title, content, type, status, create_time, comment_count, score)
+        VALUES (#{userId}, #{title}, #{content}, #{type}, #{status}, #{createTime}, #{commentCount}, #{score})
+    </insert>
+
+    <update id="updateCommentCount">
+        UPDATE article
+        SET comment_count=#{commentCount}
+        WHERE id = #{id}
+    </update>
+
+    <update id="updateType">
+        UPDATE article
+        SET type=#{type}
+        WHERE id = #{id}
+    </update>
+
+    <update id="updateStatus">
+        UPDATE article
+        SET status=#{status}
+        WHERE id = #{id}
+    </update>
+
+</mapper>

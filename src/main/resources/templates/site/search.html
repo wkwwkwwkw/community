@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="https://static.nowcoder.com/images/logo_87_87.png"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/global.css"/>
+    <title>牛客网-搜索结果</title>
+</head>
+<body>
+<div class="nk-container">
+    <header th:replace="~{commons::head}">头部</header>
+    <!-- 内容 -->
+    <div class="main">
+        <div class="container">
+            <h6><b class="square"></b> 相关帖子</h6>
+            <!-- 帖子列表 -->
+            <ul class="list-unstyled mt-4">
+                <li class="media pb-3 pt-3 mb-3 border-bottom" th:each="data:${totalData}">
+                    <a th:href="@{|/space/${data.author.id}|}">
+                        <img th:src="${data.author.header}" class="mr-4 rounded-circle" alt="用户头像">
+                    </a>
+                    <div class="media-body">
+                        <a th:href="@{|/article/${data.article.id}|}">
+                            <h6 class="mt-0 mb-3" th:utext="${data.article.title}">标题</h6>
+                            <div class="mb-3" th:utext="${data.article.content}">正文</div>
+                        </a>
+                        <div class="text-muted font-size-12">
+                            <u class="mr-3" th:utext="${data.author.username}">用户名</u> 发布于 <b
+                                th:text="${#dates.format(data.article.createTime,'yyyy-MM-dd HH:mm:ss')}">发布时间</b>
+                            <ul class="d-inline float-right">
+                                <li class="d-inline ml-2">赞 <b th:text="${data.like}">获赞数</b></li>
+                                <li class="d-inline ml-2">|</li>
+                                <li class="d-inline ml-2">回复 <b th:text="${data.article.commentCount}">回复数</b></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <nav th:replace="~{commons::pageBar}">分页</nav>
+        </div>
+    </div>
+    <footer th:replace="~{commons::footer}">页脚</footer>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<script src="/js/global.js"></script>
+</body>
+</html>

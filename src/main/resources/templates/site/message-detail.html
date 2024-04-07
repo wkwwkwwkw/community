@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="https://static.nowcoder.com/images/logo_87_87.png"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/global.css"/>
+    <link rel="stylesheet" href="/css/letter.css"/>
+    <title>牛客网-私信详情</title>
+</head>
+<body>
+<div class="nk-container">
+    <header th:replace="~{commons::head}">头部</header>
+
+    <!-- 内容 -->
+    <div class="main">
+        <div class="container">
+            <div class="row">
+                <div class="col-8">
+                    <h6><b class="square"></b> 来自 <i class="text-success" th:utext="${target.username}">对话用户名</i>
+                        的私信</h6>
+                </div>
+                <div class="col-4 text-right">
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="location.href='/message';">返回
+                    </button>
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#sendModal">
+                        给TA私信
+                    </button>
+                </div>
+            </div>
+            <!-- 弹出框 -->
+            <div class="modal fade" id="sendModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">发私信</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form method="post" th:action="@{/message/send}">
+                                <div class="form-group">
+                                    <input type="hidden" class="form-control" id="recipient-id" name="toId"
+                                           th:value="${target.id}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="message-text" class="col-form-label">内容：</label>
+                                    <textarea class="form-control" id="message-text" rows="10"
+                                              name="content"></textarea>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                            <button type="button" class="btn btn-primary" id="sendBtn">发送</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 提示框 -->
+            <div class="modal fade" id="hintModal" tabindex="-1" role="dialog" aria-labelledby="hintModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="hintModalLabel">提示</h5>
+                        </div>
+                        <div class="modal-body" id="hintBody">
+                            发送完毕!
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 私信列表 -->
+            <ul class="list-unstyled mt-4">
+                <li class="media pb-3 pt-3 mb-2" th:each="msg:${data}">
+                    <a th:href="@{|/space/${msg.fromId==self.id?self.id:target.id}|}">
+                        <img th:src="${msg.fromId==self.id?self.header:target.header}"
+                             class="mr-4 rounded-circle user-header" alt="用户头像">
+                    </a>
+                    <div class="toast show d-lg-block" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-header">
+                            <strong class="mr-auto"
+                                    th:utext="${msg.fromId==self.id?self.username:target.username}">用户名</strong>
+                            <small th:text="${#dates.format(msg.createTime,'yyyy-MM-dd HH:mm:ss')}">消息发送时间</small>
+                            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="toast-body" th:text="${msg.content}">消息内容</div>
+                    </div>
+                </li>
+            </ul>
+            <nav th:replace="~{commons::pageBar}">分页</nav>
+        </div>
+    </div>
+    <footer th:replace="~{commons::footer}">页脚</footer>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<script src="/js/global.js"></script>
+<script src="/js/message.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cf.vsing.community.dao.CommentMapper">
+
+    <select id="selectMaxId" resultType="int">
+        SELECT id FROM comment
+        ORDER BY id DESC
+        LIMIT 0,1
+    </select>
+
+    <select id="selectById" resultType="Comment">
+        SELECT id, user_id, entity_type, entity_id, target_id, content, status, create_time
+        FROM comment
+        WHERE id = #{id}
+    </select>
+
+    <select id="selectByEntityId" resultType="Comment">
+        SELECT id, user_id, entity_type, entity_id, target_id, content, status, create_time
+        FROM comment
+        WHERE status = 0
+          AND entity_type = #{entityType}
+          AND entity_id = #{entityId}
+        ORDER BY create_time
+        LIMIT #{offset},#{limit}
+    </select>
+
+    <select id="countByEntityId" resultType="int">
+        SELECT COUNT(id)
+        FROM comment
+        WHERE status = 0
+          AND entity_type = #{entityType}
+          AND entity_id = #{entityId}
+    </select>
+
+    <insert id="insertComment" parameterType="Comment" keyProperty="id">
+        INSERT INTO comment (user_id, entity_type, entity_id, target_id, content, status, create_time)
+        VALUES (#{userId}, #{entityType}, #{entityId}, #{targetId}, #{content}, #{status}, #{createTime})
+    </insert>
+
+
+</mapper>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cf.vsing.community.dao.UserMapper">
+    <select id="selectById" resultType="User">
+        SELECT id,
+        password,
+        salt,
+        authority,
+        status,
+        name,
+        header,
+        detail,
+        email,
+        phone,
+        create_time,
+        activation_code
+        FROM user
+        WHERE id = #{id}
+    </select>
+
+
+    <select id="selectByName" resultType="User">
+        SELECT id,
+        password,
+        salt,
+        authority,
+        status,
+        name,
+        header,
+        detail,
+        email,
+        phone,
+        create_time,
+        activation_code
+        FROM user
+        WHERE name = #{name}
+    </select>
+    <select id="selectByEmail" resultType="User">
+        SELECT id,
+        password,
+        salt,
+        authority,
+        status,
+        name,
+        header,
+        detail,
+        email,
+        phone,
+        create_time,
+        activation_code
+        FROM user
+        WHERE email = #{email}
+    </select>
+
+
+    <select id="selectByAuthority" resultType="User">
+        SELECT id,
+               password,
+               salt,
+               authority,
+               status,
+               name,
+               header,
+               detail,
+               email,
+               phone,
+               create_time,
+               activation_code
+        FROM user
+        WHERE authority = #{authority}
+    </select>
+
+    <select id="selectByStatus" resultType="User">
+        SELECT id,
+               password,
+               salt,
+               authority,
+               status,
+               name,
+               header,
+               detail,
+               email,
+               phone,
+               create_time,
+               activation_code
+        FROM user
+        WHERE status = #{status}
+    </select>
+
+    <select id="selectMaxId" resultType="int">
+        SELECT id FROM user
+        ORDER BY id DESC
+        LIMIT 0,1
+    </select>
+
+    <insert id="insertUser" parameterType="User" keyProperty="id">
+        INSERT INTO user (password, salt, authority, status, name, header, detail, email, phone, create_time, activation_code)
+        VALUES (#{password}, #{salt}, #{authority}, #{status}, #{name}, #{header}, #{detail}, #{email}, #{phone}, #{createTime}, #{activationCode})
+    </insert>
+
+    <update id="updateAuthority">
+        UPDATE user
+        SET authority = #{authority}
+        WHERE id = #{id}
+    </update>
+
+    <update id="updateStatus">
+        UPDATE user
+        SET status = #{status}
+        WHERE id = #{id}
+    </update>
+
+    <update id="updateHeader">
+        UPDATE user
+        SET header = #{value}
+        WHERE id = #{id}
+    </update>
+    <update id="updatePassword">
+        UPDATE user
+        SET password = #{value}
+        WHERE id = #{id}
+    </update>
+
+
+    <delete id="deleteUser">
+        DELETE
+        FROM user
+        WHERE id = #{id}
+    </delete>
+
+</mapper>

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="https://static.nowcoder.com/images/logo_87_87.png"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/global.css"/>
+    <title>牛客网-关注</title>
+</head>
+<body>
+<div class="nk-container">
+    <header th:replace="~{commons::head}">头部</header>
+    <!-- 内容 -->
+    <div class="main">
+        <div class="container">
+            <div class="position-relative">
+                <!-- 选项 -->
+                <ul class="nav nav-tabs mb-3">
+                    <li class="nav-item">
+                        <a th:class="|nav-link position-relative ${type==1?'active':''}|"
+                           th:href="@{|/user/followee/${user.id}|}"><i class="text-info"
+                                                                       th:utext="${isSelf?'我':user.username}">用户名</i>
+                            的关注</a>
+                    </li>
+                    <li class="nav-item">
+                        <a th:class="|nav-link position-relative ${type==2?'active':''}|"
+                           th:href="@{|/user/follower/${user.id}|}"><i class="text-info"
+                                                                       th:utext="${isSelf?'我':user.username}">用户名</i>
+                            的粉丝</a>
+                    </li>
+                </ul>
+                <a th:href="@{|/user/space/${user.id}|}" class="text-muted position-absolute rt-0">返回个人主页&gt;</a>
+            </div>
+            <!-- 关注列表 -->
+            <ul class="list-unstyled" th:if="${data!=null}">
+                <li class="media pb-3 pt-3 mb-3 border-bottom position-relative" th:each="data:${data}">
+                    <a th:href="@{|/user/space/${data.user.id}|}">
+                        <img th:src="@{${data.user.header}}" class="mr-4 rounded-circle user-header" alt="用户头像">
+                    </a>
+                    <div class="media-body">
+                        <h6 class="mt-0 mb-3">
+                            <span class="text-success" th:utext="${data.user.username}">用户名</span>
+                            <span class="float-right text-muted font-size-12">关注于 <i
+                                    th:text="${#dates.format(data.date,'yyyy-MM-dd')}">关注时间</i></span>
+                        </h6>
+                        <div>
+                            <input type="hidden" th:value="${data.user.id}">
+                            <button type="button"
+                                    th:class="|btn btn-sm float-right follow-btn ${data.followStatus?'btn-secondary':'btn-info'}|"
+                                    th:text="${data.followStatus?'已关注':'关注Ta'}">取消关注
+                            </button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <nav th:replace="~{commons::pageBar}">分页</nav>
+        </div>
+    </div>
+    <footer th:replace="~{commons::footer}">页脚</footer>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<script src="/js/global.js"></script>
+<script src="/js/space.js"></script>
+</body>
+</html>
