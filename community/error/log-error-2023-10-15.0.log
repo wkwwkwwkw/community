@@ -1,0 +1,37 @@
+2023-10-15 00:20:58,146 ERROR [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.v.c.s.SearchService [SearchService.java:95] 2023-10-15 00:20:58[ERROR](Elasticsearch) 文档保存时失败: save(Article article,String index) 方法抛出IOException
+参数列表:[ Article{id=290, userId='111', title='aaaaaa', content='aaaaaa', type=0, status=0, createTime=Sun Oct 15 00:20:56 CST 2023, commentCount=0, score=0.0} ]:+
+java.net.ConnectException: Connection refused: no further information
+2023-10-15 12:24:35,892 ERROR [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.i.ConsumerCoordinator [ConsumerCoordinator.java:1363] [Consumer clientId=consumer-community-consumer-group-2, groupId=community-consumer-group] Offset commit failed on partition comment-0 at offset 3: The coordinator is not aware of this member.
+2023-10-15 12:24:35,893 ERROR [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.i.ConsumerCoordinator [ConsumerCoordinator.java:793] [Consumer clientId=consumer-community-consumer-group-2, groupId=community-consumer-group] Asynchronous auto-commit of offsets failed: Offset commit cannot be completed since the consumer is not part of an active group for auto partition assignment; it is likely that the consumer was kicked out of the group.. Will continue to join group.
+2023-10-15 12:24:36,659 ERROR [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator [ConsumerCoordinator.java:1363] [Consumer clientId=consumer-community-consumer-group-1, groupId=community-consumer-group] Offset commit failed on partition article-0 at offset 4: The coordinator is not aware of this member.
+2023-10-15 12:24:36,661 ERROR [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator [ConsumerCoordinator.java:793] [Consumer clientId=consumer-community-consumer-group-1, groupId=community-consumer-group] Asynchronous auto-commit of offsets failed: Offset commit cannot be completed since the consumer is not part of an active group for auto partition assignment; it is likely that the consumer was kicked out of the group.. Will continue to join group.
+2023-10-15 16:48:59,123 ERROR [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.v.c.s.SearchService [SearchService.java:116] 2023-10-15 16:48:59[ERROR](Elasticsearch) 文档更新失败: update(Map<String,Object> value,String id) 方法抛出IOException
+参数列表:[ value : '{type=0}', id : 0 ]:+
+java.net.ConnectException: Connection refused: no further information
+2023-10-15 16:49:16,952 ERROR [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.v.c.s.SearchService [SearchService.java:116] 2023-10-15 16:49:16[ERROR](Elasticsearch) 文档更新失败: update(Map<String,Object> value,String id) 方法抛出IOException
+参数列表:[ value : '{type=0}', id : 0 ]:+
+java.net.ConnectException: Connection refused: no further information
+2023-10-15 16:52:20,186 ERROR [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.v.c.s.SearchService [SearchService.java:116] 2023-10-15 16:52:20[ERROR](Elasticsearch) 文档更新失败: update(Map<String,Object> value,String id) 方法抛出IOException
+参数列表:[ value : '{type=0}', id : 0 ]:+
+java.net.ConnectException: Connection refused: no further information
+2023-10-15 16:53:00,474 ERROR [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.v.c.s.SearchService [SearchService.java:116] 2023-10-15 16:53:00[ERROR](Elasticsearch) 文档更新失败: update(Map<String,Object> value,String id) 方法抛出IOException
+参数列表:[ value : '{type=0}', id : 0 ]:+
+java.net.ConnectException: Connection refused: no further information
+2023-10-15 16:55:09,653 ERROR [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.v.c.s.SearchService [SearchService.java:116] 2023-10-15 16:55:09[ERROR](Elasticsearch) 文档更新失败: update(Map<String,Object> value,String id) 方法抛出IOException
+参数列表:[ value : '{type=0}', id : 0 ]:+
+java.net.ConnectException: Connection refused: no further information
+2023-10-15 16:56:24,453 ERROR [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.v.c.s.SearchService [SearchService.java:116] 2023-10-15 16:56:24[ERROR](Elasticsearch) 文档更新失败: update(Map<String,Object> value,String id) 方法抛出IOException
+参数列表:[ value : '{type=1}', id : 0 ]:+
+java.net.ConnectException: Connection refused: no further information
+2023-10-15 16:57:24,813 ERROR [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] c.v.c.s.SearchService [SearchService.java:116] 2023-10-15 16:57:24[ERROR](Elasticsearch) 文档更新失败: update(Map<String,Object> value,String id) 方法抛出IOException
+参数列表:[ value : '{type=0}', id : 0 ]:+
+java.net.ConnectException: Connection refused: no further information
+2023-10-15 16:57:29,807 ERROR [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] c.v.c.s.SearchService [SearchService.java:116] 2023-10-15 16:57:29[ERROR](Elasticsearch) 文档更新失败: update(Map<String,Object> value,String id) 方法抛出IOException
+参数列表:[ value : '{type=1}', id : 0 ]:+
+java.net.ConnectException: Connection refused: no further information
+2023-10-15 16:57:33,424 ERROR [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] c.v.c.s.SearchService [SearchService.java:116] 2023-10-15 16:57:33[ERROR](Elasticsearch) 文档更新失败: update(Map<String,Object> value,String id) 方法抛出IOException
+参数列表:[ value : '{type=0}', id : 0 ]:+
+java.net.ConnectException: Connection refused: no further information
+2023-10-15 16:57:43,946 ERROR [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] c.v.c.s.SearchService [SearchService.java:116] 2023-10-15 16:57:43[ERROR](Elasticsearch) 文档更新失败: update(Map<String,Object> value,String id) 方法抛出IOException
+参数列表:[ value : '{type=1}', id : 0 ]:+
+java.net.ConnectException: Connection refused: no further information

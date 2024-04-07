@@ -1,0 +1,110 @@
+2023-06-06 10:58:37,537 WARN [restartedMain] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration [UserDetailsServiceAutoConfiguration.java:87] 
+
+Using generated security password: 66f952c0-469c-43c3-9d3f-d54ecc063324
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2023-06-06 10:58:38,437 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:1105] [Consumer clientId=consumer-community-consumer-group-1, groupId=community-consumer-group] Error while fetching metadata with correlation id 2 : {article=LEADER_NOT_AVAILABLE}
+2023-06-06 10:58:38,453 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:1105] [Consumer clientId=consumer-community-consumer-group-2, groupId=community-consumer-group] Error while fetching metadata with correlation id 2 : {like=LEADER_NOT_AVAILABLE, comment=LEADER_NOT_AVAILABLE, follow=LEADER_NOT_AVAILABLE}
+2023-06-06 10:58:38,585 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:1105] [Consumer clientId=consumer-community-consumer-group-2, groupId=community-consumer-group] Error while fetching metadata with correlation id 4 : {comment=LEADER_NOT_AVAILABLE, follow=LEADER_NOT_AVAILABLE}
+2023-06-06 11:00:26,376 WARN [restartedMain] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration [UserDetailsServiceAutoConfiguration.java:87] 
+
+Using generated security password: a9105d78-426c-4f50-afd5-98f636a9c881
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2023-06-06 11:17:16,186 WARN [restartedMain] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration [UserDetailsServiceAutoConfiguration.java:87] 
+
+Using generated security password: e3d3b2c5-cf59-4b7e-82ce-ac78f5f7d791
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2023-06-06 11:17:16,907 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:1105] [Consumer clientId=consumer-community-consumer-group-1, groupId=community-consumer-group] Error while fetching metadata with correlation id 2 : {article=LEADER_NOT_AVAILABLE}
+2023-06-06 11:17:16,921 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:1105] [Consumer clientId=consumer-community-consumer-group-2, groupId=community-consumer-group] Error while fetching metadata with correlation id 2 : {like=LEADER_NOT_AVAILABLE, comment=LEADER_NOT_AVAILABLE, follow=LEADER_NOT_AVAILABLE}
+2023-06-06 11:17:17,030 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:1105] [Consumer clientId=consumer-community-consumer-group-1, groupId=community-consumer-group] Error while fetching metadata with correlation id 4 : {article=LEADER_NOT_AVAILABLE}
+2023-06-06 11:17:17,040 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:1105] [Consumer clientId=consumer-community-consumer-group-2, groupId=community-consumer-group] Error while fetching metadata with correlation id 4 : {like=LEADER_NOT_AVAILABLE, comment=LEADER_NOT_AVAILABLE, follow=LEADER_NOT_AVAILABLE}
+2023-06-06 11:17:17,156 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:1105] [Consumer clientId=consumer-community-consumer-group-2, groupId=community-consumer-group] Error while fetching metadata with correlation id 6 : {comment=LEADER_NOT_AVAILABLE, follow=LEADER_NOT_AVAILABLE}
+2023-06-06 11:17:17,264 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:1105] [Consumer clientId=consumer-community-consumer-group-2, groupId=community-consumer-group] Error while fetching metadata with correlation id 8 : {comment=LEADER_NOT_AVAILABLE, follow=LEADER_NOT_AVAILABLE}
+2023-06-06 11:17:17,376 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:1105] [Consumer clientId=consumer-community-consumer-group-2, groupId=community-consumer-group] Error while fetching metadata with correlation id 10 : {comment=LEADER_NOT_AVAILABLE, follow=LEADER_NOT_AVAILABLE}
+2023-06-06 11:17:17,486 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:1105] [Consumer clientId=consumer-community-consumer-group-2, groupId=community-consumer-group] Error while fetching metadata with correlation id 12 : {comment=LEADER_NOT_AVAILABLE, follow=LEADER_NOT_AVAILABLE}
+2023-06-06 11:17:17,595 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:1105] [Consumer clientId=consumer-community-consumer-group-2, groupId=community-consumer-group] Error while fetching metadata with correlation id 14 : {comment=LEADER_NOT_AVAILABLE, follow=LEADER_NOT_AVAILABLE}
+2023-06-06 11:17:17,704 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:1105] [Consumer clientId=consumer-community-consumer-group-2, groupId=community-consumer-group] Error while fetching metadata with correlation id 16 : {comment=LEADER_NOT_AVAILABLE, follow=LEADER_NOT_AVAILABLE}
+2023-06-06 11:17:17,817 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:1105] [Consumer clientId=consumer-community-consumer-group-2, groupId=community-consumer-group] Error while fetching metadata with correlation id 18 : {comment=LEADER_NOT_AVAILABLE, follow=LEADER_NOT_AVAILABLE}
+2023-06-06 11:24:22,275 WARN [http-nio-8080-exec-10] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver [AbstractHandlerExceptionResolver.java:207] Resolved [org.springframework.data.redis.RedisConnectionFailureException: Unable to connect to Redis]
+2023-06-06 11:24:22,488 WARN [http-nio-8080-exec-1] o.t.s.p.AbstractStandardFragmentInsertionTagProcessor [AbstractStandardFragmentInsertionTagProcessor.java:385] [THYMELEAF][http-nio-8080-exec-1][error/500] Deprecated unwrapped fragment expression "commons::header" found in template error/500, line 13, col 11. Please use the complete syntax of fragment expressions instead ("~{commons::header}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2023-06-06 11:24:22,611 WARN [http-nio-8080-exec-1] o.t.s.p.AbstractStandardFragmentInsertionTagProcessor [AbstractStandardFragmentInsertionTagProcessor.java:385] [THYMELEAF][http-nio-8080-exec-1][error/500] Deprecated unwrapped fragment expression "commons::footer" found in template error/500, line 20, col 11. Please use the complete syntax of fragment expressions instead ("~{commons::footer}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2023-06-06 11:24:28,240 WARN [http-nio-8080-exec-8] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver [AbstractHandlerExceptionResolver.java:207] Resolved [org.springframework.data.redis.RedisConnectionFailureException: Unable to connect to Redis]
+2023-06-06 11:24:28,254 WARN [http-nio-8080-exec-9] o.t.s.p.AbstractStandardFragmentInsertionTagProcessor [AbstractStandardFragmentInsertionTagProcessor.java:385] [THYMELEAF][http-nio-8080-exec-9][error/500] Deprecated unwrapped fragment expression "commons::header" found in template error/500, line 13, col 11. Please use the complete syntax of fragment expressions instead ("~{commons::header}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2023-06-06 11:24:28,257 WARN [http-nio-8080-exec-9] o.t.s.p.AbstractStandardFragmentInsertionTagProcessor [AbstractStandardFragmentInsertionTagProcessor.java:385] [THYMELEAF][http-nio-8080-exec-9][error/500] Deprecated unwrapped fragment expression "commons::footer" found in template error/500, line 20, col 11. Please use the complete syntax of fragment expressions instead ("~{commons::footer}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2023-06-06 11:24:29,464 WARN [http-nio-8080-exec-2] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver [AbstractHandlerExceptionResolver.java:207] Resolved [org.springframework.data.redis.RedisConnectionFailureException: Unable to connect to Redis]
+2023-06-06 11:24:29,478 WARN [http-nio-8080-exec-4] o.t.s.p.AbstractStandardFragmentInsertionTagProcessor [AbstractStandardFragmentInsertionTagProcessor.java:385] [THYMELEAF][http-nio-8080-exec-4][error/500] Deprecated unwrapped fragment expression "commons::header" found in template error/500, line 13, col 11. Please use the complete syntax of fragment expressions instead ("~{commons::header}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2023-06-06 11:24:29,481 WARN [http-nio-8080-exec-4] o.t.s.p.AbstractStandardFragmentInsertionTagProcessor [AbstractStandardFragmentInsertionTagProcessor.java:385] [THYMELEAF][http-nio-8080-exec-4][error/500] Deprecated unwrapped fragment expression "commons::footer" found in template error/500, line 20, col 11. Please use the complete syntax of fragment expressions instead ("~{commons::footer}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2023-06-06 11:24:33,310 WARN [http-nio-8080-exec-8] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver [AbstractHandlerExceptionResolver.java:207] Resolved [org.springframework.data.redis.RedisConnectionFailureException: Unable to connect to Redis]
+2023-06-06 11:24:33,338 WARN [http-nio-8080-exec-9] o.t.s.p.AbstractStandardFragmentInsertionTagProcessor [AbstractStandardFragmentInsertionTagProcessor.java:385] [THYMELEAF][http-nio-8080-exec-9][error/500] Deprecated unwrapped fragment expression "commons::header" found in template error/500, line 13, col 11. Please use the complete syntax of fragment expressions instead ("~{commons::header}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2023-06-06 11:24:33,340 WARN [http-nio-8080-exec-9] o.t.s.p.AbstractStandardFragmentInsertionTagProcessor [AbstractStandardFragmentInsertionTagProcessor.java:385] [THYMELEAF][http-nio-8080-exec-9][error/500] Deprecated unwrapped fragment expression "commons::footer" found in template error/500, line 20, col 11. Please use the complete syntax of fragment expressions instead ("~{commons::footer}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2023-06-06 11:25:21,136 WARN [http-nio-8080-exec-6] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver [AbstractHandlerExceptionResolver.java:207] Resolved [org.springframework.data.redis.RedisConnectionFailureException: Unable to connect to Redis]
+2023-06-06 11:25:21,150 WARN [http-nio-8080-exec-7] o.t.s.p.AbstractStandardFragmentInsertionTagProcessor [AbstractStandardFragmentInsertionTagProcessor.java:385] [THYMELEAF][http-nio-8080-exec-7][error/500] Deprecated unwrapped fragment expression "commons::header" found in template error/500, line 13, col 11. Please use the complete syntax of fragment expressions instead ("~{commons::header}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2023-06-06 11:25:21,152 WARN [http-nio-8080-exec-7] o.t.s.p.AbstractStandardFragmentInsertionTagProcessor [AbstractStandardFragmentInsertionTagProcessor.java:385] [THYMELEAF][http-nio-8080-exec-7][error/500] Deprecated unwrapped fragment expression "commons::footer" found in template error/500, line 20, col 11. Please use the complete syntax of fragment expressions instead ("~{commons::footer}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2023-06-06 11:27:21,955 WARN [http-nio-8080-exec-2] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver [AbstractHandlerExceptionResolver.java:207] Resolved [org.springframework.data.redis.RedisConnectionFailureException: Unable to connect to Redis]
+2023-06-06 11:27:21,969 WARN [http-nio-8080-exec-5] o.t.s.p.AbstractStandardFragmentInsertionTagProcessor [AbstractStandardFragmentInsertionTagProcessor.java:385] [THYMELEAF][http-nio-8080-exec-5][error/500] Deprecated unwrapped fragment expression "commons::header" found in template error/500, line 13, col 11. Please use the complete syntax of fragment expressions instead ("~{commons::header}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2023-06-06 11:27:21,971 WARN [http-nio-8080-exec-5] o.t.s.p.AbstractStandardFragmentInsertionTagProcessor [AbstractStandardFragmentInsertionTagProcessor.java:385] [THYMELEAF][http-nio-8080-exec-5][error/500] Deprecated unwrapped fragment expression "commons::footer" found in template error/500, line 20, col 11. Please use the complete syntax of fragment expressions instead ("~{commons::footer}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2023-06-06 11:49:58,541 WARN [restartedMain] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration [UserDetailsServiceAutoConfiguration.java:87] 
+
+Using generated security password: 2e9d8d37-9eb0-41e7-b531-000f07b7c8fb
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2023-06-06 11:50:56,308 WARN [main] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration [UserDetailsServiceAutoConfiguration.java:87] 
+
+Using generated security password: 2e90968a-63f1-4bc8-9825-c8217dff3528
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2023-06-06 11:52:51,457 WARN [main] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration [UserDetailsServiceAutoConfiguration.java:87] 
+
+Using generated security password: 9413ef1c-409d-48fa-8dde-dbfc639ce14e
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2023-06-06 11:54:00,956 WARN [main] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration [UserDetailsServiceAutoConfiguration.java:87] 
+
+Using generated security password: b59a115c-9eee-4dde-bfdd-a7dc368a8d99
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2023-06-06 11:57:15,809 WARN [main] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration [UserDetailsServiceAutoConfiguration.java:87] 
+
+Using generated security password: f077109b-0007-4e26-bdce-a769364c1f5b
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2023-06-06 12:09:21,088 WARN [main] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration [UserDetailsServiceAutoConfiguration.java:87] 
+
+Using generated security password: 93744d0c-fac9-410a-96bf-ef7cfbca82f2
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2023-06-06 12:10:56,306 WARN [main] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration [UserDetailsServiceAutoConfiguration.java:87] 
+
+Using generated security password: efd5f2c8-8743-426d-900e-c58760c44428
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2023-06-06 12:13:19,390 WARN [main] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration [UserDetailsServiceAutoConfiguration.java:87] 
+
+Using generated security password: ace8c90c-b4ec-4713-9f3b-db0fa7659f7c
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2023-06-06 12:31:22,614 WARN [main] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration [UserDetailsServiceAutoConfiguration.java:87] 
+
+Using generated security password: 40bbd66b-6bd7-40c4-bcc8-5133abd0d7e7
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2023-06-06 12:35:13,386 WARN [main] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration [UserDetailsServiceAutoConfiguration.java:87] 
+
+Using generated security password: de8fb658-dfaa-4085-8ce6-6cc759e75825
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
