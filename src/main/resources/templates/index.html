@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="https://static.nowcoder.com/images/logo_87_87.png"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/global.css"/>
+    <title>中外信息交流平台-首页</title>
+</head>
+<body>
+<div class="nk-container">
+    <header th:replace="~{commons::head}">头部</header>
+    <!-- 内容 -->
+    <div class="main">
+        <div class="container rounded-lg">
+            <div class="position-relative">
+                <!-- 筛选条件 -->
+                <ul class="nav nav-tabs mb-3">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">最新</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">最热</a>
+                    </li>
+                </ul>
+                <button type="button" class="btn btn-primary btn-sm position-absolute rt-0" data-toggle="modal"
+                        data-target="#publishModal" th:if="${loginUser!=null}">我要发布
+                </button>
+            </div>
+            <!-- 弹出框 -->
+            <div class="modal fade" id="publishModal" tabindex="-1" role="dialog" aria-labelledby="publishModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="publishModalLabel">新帖发布</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="article-form">
+                                <div class="form-group">
+                                    <label for="recipient-name" class="col-form-label">标题：</label>
+                                    <input type="text" class="form-control" id="recipient-name" name="title">
+                                </div>
+                                <div class="form-group">
+                                    <label for="message-text" class="col-form-label">正文：</label>
+                                    <textarea class="form-control" id="message-text" rows="15" name="content"></textarea>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                            <button type="button" class="btn btn-primary" id="publishBtn" onclick="publish('publishModal','/article/publish','article-form')">发布</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 提示框 -->
+            <div class="modal fade" id="hintModal" tabindex="-1" role="dialog" aria-labelledby="hintModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="hintModalLabel">提示</h5>
+                        </div>
+                        <div class="modal-body" id="hintBody">
+                            发布完毕!
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 帖子列表 -->
+            <ul class="list-unstyled">
+                <li class="media pb-3 pt-3 mb-3 border-bottom" th:each="article:${articles}">
+                    <a th:href="@{|/user/space/${article.user.id}|}">
+                        <img th:src="${article.user.header}" class="mr-4 rounded-circle" alt="用户头像" style="width:50px;height:50px;">
+                    </a>
+                    <a class="media-body" th:href="@{|/article/${article.article.id}|}">
+                        <div class="media-body">
+                            <h6 class="mt-0 mb-3">
+                                <span th:utext="${article.article.title}">正文</span>
+                                <span class="badge badge-secondary bg-primary" th:if="${article.article.type==1}">置顶</span>
+                                <span class="badge badge-secondary bg-danger" th:if="${article.article.status==1}">精华</span>
+                            </h6>
+                            <div class="text-muted font-size-12">
+                                <u class="mr-3" th:utext="${article.user.username}">用户名</u> 发布于 <b
+                                    th:text="${#dates.format(article.article.createTime,'yyyy-MM-dd HH:mm:ss')}">发帖时间</b>
+                                <ul class="d-inline float-right">
+                                    <li class="d-inline ml-2"><b th:text="${article.likeStatus?'已点赞':'赞'}">点赞状态</b>
+                                        <i th:text="${article.likeCount}">点赞数</i></li>
+                                    <li class="d-inline ml-2">|</li>
+                                    <li class="d-inline ml-2">评论 <span
+                                            th:text="${article.article.commentCount}">评论数量</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <nav th:replace="~{commons::pageBar}">分页</nav>
+        </div>
+    </div>
+    <footer th:replace="~{commons::footer}">页脚</footer>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<script src="/js/global.js"></script>
+<script src="/js/index.js"></script>
+</body>
+</html>

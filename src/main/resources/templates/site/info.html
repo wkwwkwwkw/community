@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="https://static.nowcoder.com/images/logo_87_87.png"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/global.css"/>
+    <link rel="stylesheet" href="/css/letter.css"/>
+    <title>牛客网-通知</title>
+</head>
+<body>
+<div class="nk-container">
+    <header th:replace="~{commons::head}">头部</header>
+    <!-- 内容 -->
+    <div class="main">
+        <div class="container">
+            <div class="position-relative">
+                <!-- 选项 -->
+                <ul class="nav nav-tabs mb-3">
+                    <li class="nav-item">
+                        <a class="nav-link position-relative" href="/message">朋友私信<span class="badge badge-danger"
+                                                                                            th:if="${messageUnreadNum!=0}"
+                                                                                            th:text="${messageUnreadNum}">未读消息数</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link position-relative active" href="/info">系统通知<span
+                                class="badge badge-danger" th:if="${infoUnreadNum!=0}"
+                                th:text="${infoUnreadNum}">未读通知数</span></a>
+                    </li>
+                </ul>
+            </div>
+            <!-- 通知列表 -->
+            <ul class="list-unstyled">
+                <li class="media pb-3 pt-3 mb-3 border-bottom position-relative" th:if="${events!=null}"
+                    th:each="event:${events}">
+                    <span class="badge badge-danger" th:if="${event.eventUnreadNum!=0}"
+                          th:text="${event.eventUnreadNum}">未读通知数</span>
+                    <img th:src="${event.icon}" class="mr-4 user-header" alt="通知图标">
+                    <div class="media-body">
+                        <h6 class="mt-0 mb-3">
+                            <span th:utext="${event.name}">通知类型</span>
+                            <span class="float-right text-muted font-size-12"
+                                  th:text="${#dates.format(event.date,'yyyy-MM-dd HH:mm:ss')}">2019-04-28 14:13:25</span>
+                        </h6>
+                        <div>
+                            <a th:href="@{|info/${event.type}|}">用户 <i th:utext="${event.fromName}">用户名</i> <i
+                                    th:utext="${event.content}">正文</i></a>
+                            <ul class="d-inline font-size-12 float-right">
+                                <li class="d-inline ml-2"><span class="text-primary">共 <i
+                                        th:text="${event.eventDetailNum}">3</i> 条通知</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <footer th:replace="~{commons::footer}">页脚</footer>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<script src="/js/global.js"></script>
+</body>
+</html>
